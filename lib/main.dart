@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_mvc/provider/example_one_provider.dart';
+import 'package:provider_mvc/provider/fav_provider.dart';
 import 'package:provider_mvc/provider/provider_class.dart';
 import 'package:provider_mvc/view/counter_class.dart';
 import 'package:provider_mvc/view/example_one.dart';
+import 'package:provider_mvc/view/fav/fav_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,6 +22,7 @@ class MyApp extends StatelessWidget {
         providers: [
           ChangeNotifierProvider(create: (_) => CounterProvider()),
           ChangeNotifierProvider(create: (_) => ExampleOneProvider()),
+          ChangeNotifierProvider(create: (_) => FavProvider()),
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
@@ -27,7 +30,7 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          home: const ExampleOne(),
+          home: const FavScreen(),
         ));
   }
 }
