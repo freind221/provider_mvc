@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_mvc/provider/example_one_provider.dart';
 import 'package:provider_mvc/provider/fav_provider.dart';
 import 'package:provider_mvc/provider/provider_class.dart';
-import 'package:provider_mvc/view/counter_class.dart';
-import 'package:provider_mvc/view/example_one.dart';
+import 'package:provider_mvc/view/fav/fav_list_screen.dart';
+
 import 'package:provider_mvc/view/fav/fav_screen.dart';
 
 void main() {
@@ -24,13 +25,17 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(create: (_) => ExampleOneProvider()),
           ChangeNotifierProvider(create: (_) => FavProvider()),
         ],
-        child: MaterialApp(
+        child: GetMaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
           theme: ThemeData(
             primarySwatch: Colors.blue,
           ),
-          home: const FavScreen(),
+          initialRoute: '/',
+          getPages: [
+            GetPage(name: '/', page: () => const FavScreen()),
+            GetPage(name: '/favs', page: () => const FavLit())
+          ],
         ));
   }
 }

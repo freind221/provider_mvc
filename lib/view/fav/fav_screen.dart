@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_mvc/provider/fav_provider.dart';
+import 'package:provider_mvc/view/fav/fav_list_screen.dart';
 
 class FavScreen extends StatefulWidget {
   const FavScreen({Key? key}) : super(key: key);
@@ -17,6 +19,13 @@ class _FavScreenState extends State<FavScreen> {
     return Scaffold(
         appBar: AppBar(
           title: const Center(child: Text('Favorite Screen')),
+          actions: [
+            InkWell(
+                onTap: () {
+                  Get.to(() => const FavLit());
+                },
+                child: const Icon(Icons.favorite))
+          ],
         ),
         body: Consumer<FavProvider>(builder: ((context, value, child) {
           return ListView.builder(itemBuilder: ((context, index) {
