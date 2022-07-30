@@ -4,9 +4,12 @@ import 'package:provider/provider.dart';
 import 'package:provider_mvc/provider/example_one_provider.dart';
 import 'package:provider_mvc/provider/fav_provider.dart';
 import 'package:provider_mvc/provider/provider_class.dart';
+import 'package:provider_mvc/utitlities/routes/route.dart';
+import 'package:provider_mvc/utitlities/routes/routes_name.dart';
 import 'package:provider_mvc/view/fav/fav_list_screen.dart';
 
 import 'package:provider_mvc/view/fav/fav_screen.dart';
+import 'package:provider_mvc/view/login_screen.dart';
 import 'package:provider_mvc/view/valu_notifier.dart';
 
 void main() {
@@ -32,7 +35,9 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             primarySwatch: Colors.deepOrange,
           ),
-          home: ValNotifier(),
+          //home: const LoginPage(),
+          initialRoute: RouteNames.login,
+          onGenerateRoute: Routes.generateRoute,
         ));
   }
 }
