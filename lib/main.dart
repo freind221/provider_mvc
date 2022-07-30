@@ -7,6 +7,7 @@ import 'package:provider_mvc/provider/provider_class.dart';
 import 'package:provider_mvc/view/fav/fav_list_screen.dart';
 
 import 'package:provider_mvc/view/fav/fav_screen.dart';
+import 'package:provider_mvc/view/valu_notifier.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,17 +26,13 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(create: (_) => ExampleOneProvider()),
           ChangeNotifierProvider(create: (_) => FavProvider()),
         ],
-        child: GetMaterialApp(
+        child: MaterialApp(
           debugShowCheckedModeBanner: false,
           title: 'Flutter Demo',
           theme: ThemeData(
-            primarySwatch: Colors.blue,
+            primarySwatch: Colors.deepOrange,
           ),
-          initialRoute: '/',
-          getPages: [
-            GetPage(name: '/', page: () => const FavScreen()),
-            GetPage(name: '/favs', page: () => const FavLit())
-          ],
+          home: ValNotifier(),
         ));
   }
 }
