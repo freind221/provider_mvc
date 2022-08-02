@@ -22,7 +22,9 @@ class CustoButton extends StatelessWidget {
             borderRadius: BorderRadius.circular(10), color: Colors.deepOrange),
         child: Center(
             child: isLoading
-                ? const CircularProgressIndicator()
+                ? const CircularProgressIndicator(
+                    color: Colors.white,
+                  )
                 : Text(
                     title,
                     style: const TextStyle(color: Colors.white),

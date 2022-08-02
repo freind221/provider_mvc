@@ -11,6 +11,7 @@ import 'package:provider_mvc/view/fav/fav_list_screen.dart';
 import 'package:provider_mvc/view/fav/fav_screen.dart';
 import 'package:provider_mvc/view/login_screen.dart';
 import 'package:provider_mvc/view/valu_notifier.dart';
+import 'package:provider_mvc/view_model/auth_view_model.dart';
 
 void main() {
   runApp(const MyApp());
@@ -28,6 +29,7 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(create: (_) => CounterProvider()),
           ChangeNotifierProvider(create: (_) => ExampleOneProvider()),
           ChangeNotifierProvider(create: (_) => FavProvider()),
+          ChangeNotifierProvider(create: (_) => AuthViewModel())
         ],
         child: MaterialApp(
           debugShowCheckedModeBanner: false,
